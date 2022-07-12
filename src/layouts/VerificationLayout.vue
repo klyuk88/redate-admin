@@ -16,7 +16,6 @@
     width: 92.7%;
     min-height: 100%;
     padding: 50px;
-    overflow-y: scroll;
 
     &:after {
       content: '';

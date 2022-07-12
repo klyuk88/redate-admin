@@ -17,7 +17,6 @@
     min-height: calc(100% - 17px);
     padding: 50px;
     margin-top: 17px;
-    overflow-y: scroll;
 
     &:after {
       content: '';
