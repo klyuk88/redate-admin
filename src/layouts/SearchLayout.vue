@@ -15,7 +15,10 @@
     position: relative;
     width: 89.4%;
     min-height: 100%;
-    padding: 50px;
+
+    // padding: 50px;
+    overflow-y: scroll;
+
 
     &:after {
       content: '';
