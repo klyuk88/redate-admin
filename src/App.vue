@@ -1,3 +1,7 @@
+<script setup>
+import App from './views/App'
+</script>
+
 <template>
-  <div>App</div>
+  <App />
 </template>
