@@ -32,6 +32,8 @@ defineProps({
   &__logout {
     width: 24px;
     height: 24px;
+    background: url('@/assets/icons/logout.svg');
+    cursor: pointer;
   }
 }
 </style>

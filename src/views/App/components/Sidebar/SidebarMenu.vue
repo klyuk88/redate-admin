@@ -20,7 +20,7 @@ const filteredMenu = computed(() => props.menu.filter((item) => item.show))
       class="sidebar-menu__item"
     >
       <div class="sidebar-menu__left">
-        <div v-if="item.icon" class="sidebar-menu__icon"></div>
+        <img v-if="item.icon" class="sidebar-menu__icon" :src="item.icon" />
         <div class="sidebar-menu__title">{{ item.title }}</div>
       </div>
       <div v-if="item.count !== 0" class="sidebar-menu__count">
