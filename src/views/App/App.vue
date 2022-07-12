@@ -1,5 +1,24 @@
 <script setup>
+import { computed } from 'vue'
+import router from '@/router'
 import Sidebar from './components/Sidebar'
+import DefaultLayout from '@/layouts/DefaultLayout.vue'
+import MailingsLayout from '@/layouts/MailingsLayout.vue'
+import VerificationLayout from '@/layouts/VerificationLayout.vue'
+import SearchLayout from '@/layouts/SearchLayout.vue'
+
+const component = computed(() => {
+  switch (router.currentRoute.value.meta.layout) {
+    case 'mailings':
+      return MailingsLayout
+    case 'verification':
+      return VerificationLayout
+    case 'search':
+      return SearchLayout
+    default:
+      return DefaultLayout
+  }
+})
 </script>
 
 <template>
@@ -7,7 +26,9 @@ import Sidebar from './components/Sidebar'
     <div class="app__sidebar">
       <Sidebar />
     </div>
-    <div class="app__content"></div>
+    <div class="app__content">
+      <component :is="component" />
+    </div>
   </div>
 </template>
 

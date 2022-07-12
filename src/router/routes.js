@@ -12,6 +12,9 @@ const routes = [
     components: {
       default: () => import('@/views/Mailings'),
     },
+    meta: {
+      layout: 'mailings',
+    },
   },
   {
     path: '/verification',
@@ -19,12 +22,18 @@ const routes = [
     components: {
       default: () => import('@/views/Verification'),
     },
+    meta: {
+      layout: 'verification',
+    },
   },
   {
     path: '/moderation',
     name: 'Moderation',
     components: {
       default: () => import('@/views/Moderation'),
+    },
+    meta: {
+      layout: 'verification',
     },
   },
   {
@@ -46,6 +55,9 @@ const routes = [
     name: 'Search',
     components: {
       default: () => import('@/views/Search'),
+    },
+    meta: {
+      layout: 'search',
     },
   },
   {
