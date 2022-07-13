@@ -52,6 +52,7 @@ import UserCard from './UserCard.vue'
         font-weight: 600;
         font-size: 15px;
         line-height: 153.5%;
+          border: 1px solid rgba(255, 255, 255, 0.33);
         &:focus {
           border: 1px solid #ffffff;
         }
