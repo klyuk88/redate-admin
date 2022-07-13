@@ -1,7 +1,9 @@
 <template>
   <div class="search-layout">
     <div class="search-layout__content">
-      <router-view />
+      <div class="default-layout__view">
+        <router-view />
+      </div>
     </div>
   </div>
 </template>
@@ -15,10 +17,8 @@
     position: relative;
     width: 89.4%;
     min-height: 100%;
-
-    // padding: 50px;
     overflow-y: scroll;
-
+    z-index: 1;
 
     &:after {
       content: '';
@@ -31,7 +31,13 @@
       border-right: 1px solid $default-layout-border;
       background: $default-layout-background;
       opacity: 0.2;
+      z-index: 2;
     }
+  }
+
+  &__view {
+    position: relative;
+    z-index: 3;
   }
 }
 </style>

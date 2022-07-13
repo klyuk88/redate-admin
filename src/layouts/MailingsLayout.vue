@@ -1,7 +1,9 @@
 <template>
   <div class="mailings-layout">
     <div class="mailings-layout__content">
-      <router-view />
+      <div class="default-layout__view">
+        <router-view />
+      </div>
     </div>
   </div>
 </template>
@@ -17,6 +19,7 @@
     min-height: calc(100% - 17px);
     padding: 50px;
     margin-top: 17px;
+    z-index: 1;
 
     &:after {
       content: '';
@@ -31,7 +34,13 @@
       border-radius: 16px 16px 0 0;
       background: $default-layout-background;
       opacity: 0.2;
+      z-index: 2;
     }
+  }
+
+  &__view {
+    position: relative;
+    z-index: 3;
   }
 }
 </style>
