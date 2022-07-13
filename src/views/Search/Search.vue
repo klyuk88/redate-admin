@@ -4,8 +4,6 @@ import SearchById from '../../components/SearchById/SearchById.vue'
 
 <template>
   <div>
-      <SearchById />
+    <SearchById />
   </div>
 </template>
-
-

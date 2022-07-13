@@ -17,9 +17,9 @@ import UserCard from './UserCard.vue'
 
 <style lang="scss" scoped>
 .background__search {
-    width: 1226px;
-    position: relative;
-    z-index: 99;
+  width: 1226px;
+  position: relative;
+  z-index: 99;
   .navbar__search {
     display: flex;
     justify-content: space-between;
@@ -28,7 +28,7 @@ import UserCard from './UserCard.vue'
     border: 1px solid rgba(255, 255, 255, 0.33);
     h1 {
       margin: 49px 0 0 52px;
-      font-family: "Mulish";
+      font-family: 'Mulish';
       font-style: normal;
       font-weight: 600;
       font-size: 34px;
@@ -47,21 +47,22 @@ import UserCard from './UserCard.vue'
         outline: none;
         color: #ffffff;
         padding: 0px 16px;
-        font-family: "Mulish";
+        font-family: 'Mulish';
         font-style: normal;
         font-weight: 600;
         font-size: 15px;
         line-height: 153.5%;
         &:focus {
-            border: 1px solid #ffffff;
+          border: 1px solid #ffffff;
         }
       }
       img {
-          cursor: pointer;
-          position: absolute;
-          right: 50px;
-          top: 68px;
+        cursor: pointer;
+        position: absolute;
+        right: 50px;
+        top: 68px;
       }
     }
   }
-}</style>
+}
+</style>

@@ -1,14 +1,14 @@
 Содержит папки для каждого раздела приложения со следующей структурой:
 
 --NamedComponent
-  --components
-  --views
-  --store
-  --services.js
-  --helpers.js
-  --api.js
-  --constants.js
-  --ComponentName.vue
+--components
+--views
+--store
+--services.js
+--helpers.js
+--api.js
+--constants.js
+--ComponentName.vue
 
 Папка components - содержит файлы с компонентами, используемыми только в текущем компоненте
 

@@ -55,7 +55,7 @@ p {
         border-radius: 50%;
         background: #2b66fc;
         &.offline {
-            background: #ffffff;
+          background: #ffffff;
         }
       }
     }

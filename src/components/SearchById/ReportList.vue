@@ -13,17 +13,16 @@ const store = [
     id: 632121,
     date: '12.08.2022, 17:55',
     text: 'Вымагал выслать голые фотографии, сначала предлагал денег, потом оскроблял, что если я не так красива как на одетых фото - голая, то точно уродина проказная',
-  }
+  },
 ]
 </script>
 
 <template>
   <div class="report__list">
-    <li v-for="(reasons, index) in store"
-    :key="index">
+    <li v-for="(reasons, index) in store" :key="index">
       <ReportItem
-        :reason="reasons.reason"
         :id="reasons.id"
+        :reason="reasons.reason"
         :date="reasons.date"
         :text="reasons.text"
       />
@@ -32,7 +31,7 @@ const store = [
 </template>
 
 <style lang="scss" scoped>
-    li {
-        list-style: none;
-    }
+li {
+  list-style: none;
+}
 </style>
