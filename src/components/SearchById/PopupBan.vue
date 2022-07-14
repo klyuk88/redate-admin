@@ -3,11 +3,10 @@ const emit = defineEmits(['closeBanModal'])
 </script>
 
 <template>
-  <div class="background__ban"
-  @click.self="emit('closeBanModal')">
+  <div class="background__ban" @click.self="emit('closeBanModal')">
     <div class="container__ban">
       <div class="content__ban">
-        <img  src="@/assets/search__logos/ban__logo__popup.svg" alt="" />
+        <img src="@/assets/search__logos/ban__logo__popup.svg" alt="" />
         <p>Блокировка пользотваеля ID555222</p>
         <textarea
           class="desc__ban"
@@ -17,7 +16,11 @@ const emit = defineEmits(['closeBanModal'])
         <div class="btn">Заблокировать</div>
       </div>
       <div class="logo__close">
-        <img @click="emit('closeBanModal')" src="@/assets/search__logos/close.svg" alt="" />
+        <img
+          src="@/assets/search__logos/close.svg"
+          alt=""
+          @click="emit('closeBanModal')"
+        />
       </div>
     </div>
   </div>
@@ -36,9 +39,9 @@ const emit = defineEmits(['closeBanModal'])
   display: flex;
   align-items: center;
   justify-content: center;
-        .logo__close {
-          cursor: pointer;
-      }
+  .logo__close {
+    cursor: pointer;
+  }
   .container__ban {
     display: flex;
     .content__ban {
