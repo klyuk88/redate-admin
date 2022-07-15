@@ -1,9 +1,9 @@
 <script setup>
 import { computed } from 'vue'
 import MailingsTabsItem from './MailingsTabsItem.vue'
-import OnModeration from '../views/OnModeration.vue'
-import Active from '../views/Active.vue'
-import Rejected from '../views/Rejected.vue'
+import MailingsOnModeration from '../views/MailingsOnModeration.vue'
+import MailingsActive from '../views/MailingsActive.vue'
+import MailingsRejected from '../views/MailingsRejected.vue'
 
 const props = defineProps({
   tabs: {
@@ -18,12 +18,12 @@ const props = defineProps({
 
 const component = computed(() => {
   switch (props.currentTab.componentName) {
-    case 'OnModeration':
-      return OnModeration
-    case 'Active':
-      return Active
-    case 'Rejected':
-      return Rejected
+    case 'MailingsOnModeration':
+      return MailingsOnModeration
+    case 'MailingsActive':
+      return MailingsActive
+    case 'MailingsRejected':
+      return MailingsRejected
     default:
       return null
   }

@@ -8,21 +8,21 @@ export const useMailingsStore = defineStore('mailings', {
         id: 1,
         title: 'Рассылки на модерации',
         count: 89,
-        componentName: 'OnModeration',
+        componentName: 'MailingsOnModeration',
         mod: 'on-moderation',
       },
       {
         id: 2,
         title: 'Активные',
         count: 102,
-        componentName: 'Active',
+        componentName: 'MailingsActive',
         mod: 'active',
       },
       {
         id: 3,
         title: 'Отклоненные',
         count: null,
-        componentName: 'Rejected',
+        componentName: 'MailingsRejected',
         mod: 'rejected',
       },
     ],
@@ -36,8 +36,9 @@ export const useMailingsStore = defineStore('mailings', {
 
       const sortedTabs = filteredTabs.sort((a, b) => a.id - b.id)
 
-      this.currentTab = tab
       this.tabs = [...tabs, ...sortedTabs]
+
+      this.currentTab = tab
     },
   },
 })
