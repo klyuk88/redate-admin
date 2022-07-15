@@ -8,7 +8,7 @@ import PopupDiamond from './PopupDiamond.vue'
 
 const isBanned = ref(true)
 const isDiamond = ref(true)
-const femalePage = ref(true)
+const femalePage = ref(false)
 const showBanModal = ref(false)
 const showUnbanModal = ref(false)
 const showDiamondModal = ref(false)
@@ -314,7 +314,7 @@ const visibleBbtn = ref(false)
         img {
           border-radius: 16px;
           border: 1px solid rgba(255, 255, 255, 0.33);
-          width: 100%;
+          // width: 100%;
           height: 100%;
           margin-bottom: 8px;
         }

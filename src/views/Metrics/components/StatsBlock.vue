@@ -160,7 +160,7 @@ p {
   }
 }
 .sex__stats {
-  width: 297.5px;
+  width: 452px;
   height: 296px;
   background: rgba(0, 0, 0, 0.2);
   box-shadow: inset 0px -4px 25px rgba(0, 0, 0, 0.25);
@@ -171,8 +171,8 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 16px;
-    width: 297.5px;
+    padding: 18px 25px;
+    width: 452px;
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 11px;
@@ -194,7 +194,7 @@ p {
     }
   }
   .stats__body {
-    padding: 8px 16px 16px 16px;
+    padding: 8px 25px 16px 25px;
     li {
       margin-left: 32px;
       color: rgba(255, 255, 255, 0.33);
