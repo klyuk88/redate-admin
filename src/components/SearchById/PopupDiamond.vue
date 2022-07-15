@@ -6,7 +6,11 @@ const emit = defineEmits(['closeDiamondModal'])
   <div class="background__diamond" @click.self="emit('closeDiamondModal')">
     <div class="container__diamond">
       <div class="content__diamond">
-        <img src="@/assets/search__logos/diamond.svg" alt="" class="logo__diamond"/>
+        <img
+          src="@/assets/search__logos/diamond.svg"
+          alt=""
+          class="logo__diamond"
+        />
         <p>Присвоить пользователю ID454543 статус Diamond?</p>
         <div class="btn__block">
           <div class="btn" @click="emit('closeDiamondModal')">Отмена</div>
@@ -52,7 +56,7 @@ const emit = defineEmits(['closeDiamondModal'])
       width: 376px;
       height: 234px;
       .logo__diamond {
-          margin-top: 24px;
+        margin-top: 24px;
       }
       p {
         margin: 10px 0 16px 0;

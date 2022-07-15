@@ -45,7 +45,7 @@ import UsersBlock from './UsersBlock.vue'
       </div>
     </div>
     <div class="stats__block">
-      <StatsBlock famelePage="true" />
+      <StatsBlock famele-page="true" />
       <StatsBlock sex="Девушки" />
     </div>
     <div class="new__users">
@@ -89,9 +89,9 @@ p {
   line-height: 153.5%;
 }
 .background__metrics {
-    // display: flex;
-    // align-items: center;
-    // flex-direction: column;
+  // display: flex;
+  // align-items: center;
+  // flex-direction: column;
   .header__metrics {
     display: flex;
     h1 {

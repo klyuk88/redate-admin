@@ -83,7 +83,7 @@ defineProps({
         </div>
         <p class="cash">{{ maillistOverall }}<span>₽</span></p>
       </div>
-      <div class="tarrifs"  v-if="famelePage">
+      <div v-if="famelePage" class="tarrifs">
         <div class="stats__item">
           <div class="stats__left__side">
             <div>

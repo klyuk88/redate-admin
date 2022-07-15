@@ -25,7 +25,7 @@ const visibleBbtn = ref(false)
     v-if="showDiamondModal"
     @close-diamond-modal="showDiamondModal = false"
   />
-  <div class="background__male__card"  >
+  <div class="background__male__card">
     <div class="left__side">
       <div class="card__info">
         <div class="profile__photo" :class="{ femaleStyle: femalePage }">
@@ -103,12 +103,12 @@ const visibleBbtn = ref(false)
         <div class="btn">
           <img src="@/assets/search__logos/chat.svg" alt="" />
         </div>
-        <div class="btn unban" v-if="isBanned" @click="showUnbanModal = true">
+        <div v-if="isBanned" class="btn unban" @click="showUnbanModal = true">
           Разблокировать
         </div>
         <div
-          class="btn unban banned"
           v-if="!isBanned"
+          class="btn unban banned"
           @click="showBanModal = true"
         >
           <img src="@/assets/search__logos/ban__icon.svg" alt="" />
@@ -116,7 +116,7 @@ const visibleBbtn = ref(false)
         </div>
         <div class="btn chat">Перейти в диалоги</div>
         <div class="money__input">
-          <input type="text" placeholder="Сумма  ₽"  maxlength="7"/>
+          <input type="text" placeholder="Сумма  ₽" maxlength="7" />
           <div class="btn">
             <img src="@/assets/search__logos/money.svg" alt="" />
           </div>
@@ -140,12 +140,12 @@ const visibleBbtn = ref(false)
       </div>
       <div>
         <textarea
-          @focus="visibleBbtn = true"
           type="text"
           placeholder="Введите свой текст заметки тут..."
+          @focus="visibleBbtn = true"
         ></textarea>
-        <div class="btn add__note" :class="{ visible : visibleBbtn }" >
-          <img src="@/assets/search__logos/add__note.svg" alt="">
+        <div class="btn add__note" :class="{ visible: visibleBbtn }">
+          <img src="@/assets/search__logos/add__note.svg" alt="" />
         </div>
       </div>
     </div>
@@ -497,7 +497,7 @@ const visibleBbtn = ref(false)
     }
     textarea {
       outline: none;
-      padding: 18px 70px 18px 16px ;
+      padding: 18px 70px 18px 16px;
       gap: 8px;
       width: 376px;
       min-height: 57px;

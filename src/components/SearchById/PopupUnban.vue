@@ -12,9 +12,9 @@ const emit = defineEmits(['closeUnbanModal'])
       </div>
       <div class="logo__close">
         <img
-          @click="emit('closeUnbanModal')"
           src="@/assets/search__logos/close.svg"
           alt=""
+          @click="emit('closeUnbanModal')"
         />
       </div>
     </div>
@@ -49,7 +49,7 @@ const emit = defineEmits(['closeUnbanModal'])
       box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.17);
       border-radius: 24px;
       margin-right: 16px;
-        text-align: center;
+      text-align: center;
       p {
         font-weight: 600;
         font-size: 16px;
