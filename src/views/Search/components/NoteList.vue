@@ -16,15 +16,15 @@ const store = [
     name: 'Кирилл',
     date: '12.08.2022, 17:55',
     text: 'При регистрации указал не ту дату раождения, писал в поддержку и просил поменять.',
-  },
+  }
 ]
 </script>
 
 <template>
   <div class="note__list">
-    <li v-for="(note, index) in store" :key="index">
-      <NoteItem :name="note.name" :date="note.date" :text="note.text" />
-    </li>
+      <li v-for="(note, index) in store" :key="index">
+        <NoteItem :name="note.name" :date="note.date" :text="note.text" />
+      </li>
   </div>
 </template>
 

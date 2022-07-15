@@ -67,7 +67,7 @@ p {
   line-height: 153.5%;
 }
 .stats__back {
-  width: 611px;
+  width: 930px;
   background: rgba(0, 0, 0, 0.2);
   box-shadow: inset 0px -4px 25px rgba(0, 0, 0, 0.15);
   border-radius: 11px;
@@ -76,7 +76,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 16px;
+    padding: 18px 25px;
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 11px;
@@ -93,7 +93,7 @@ p {
     }
     .stats {
       display: flex;
-      width: 255px;
+      width: 400px;
       justify-content: space-between;
       align-items: center;
       .leftside {
