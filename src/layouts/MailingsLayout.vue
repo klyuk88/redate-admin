@@ -17,7 +17,6 @@
     position: relative;
     width: 87%;
     min-height: calc(100% - 17px);
-    padding: 50px;
     margin-top: 17px;
     z-index: 1;
 
@@ -28,11 +27,10 @@
       left: 0;
       width: 100%;
       height: 100%;
-      border-top: 1px solid $default-layout-border;
-      border-left: 1px solid $default-layout-border;
-      border-right: 1px solid $default-layout-border;
-      border-radius: 16px 16px 0 0;
-      background: $default-layout-background;
+      // border-top: 1px solid $default-layout-border;
+      // border-left: 1px solid $default-layout-border;
+      // border-right: 1px solid $default-layout-border;
+      background: $mailing-layout-background;
       opacity: 0.2;
       z-index: 2;
     }
