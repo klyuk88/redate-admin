@@ -93,5 +93,9 @@ const component = computed(() => {
   &__item--rejected.active ~ .mailings-tabs__item--active {
     width: 21.5%;
   }
+
+  &__component {
+    height: calc(100vh - 99px);
+  }
 }
 </style>
