@@ -12,9 +12,9 @@ const emit = defineEmits(['closeUnbanModal'])
       </div>
       <div class="logo__close">
         <img
-          @click="emit('closeUnbanModal')"
           src="@/assets/search__logos/close.svg"
           alt=""
+          @click="emit('closeUnbanModal')"
         />
       </div>
     </div>
