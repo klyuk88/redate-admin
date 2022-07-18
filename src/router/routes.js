@@ -44,6 +44,13 @@ const routes = [
     },
   },
   {
+    path: '/users-chat',
+    name: 'UsersChat',
+    components: {
+      default: () => import('@/views/UsersChat'),
+    },
+  },
+  {
     path: '/blocking',
     name: 'Blocking',
     components: {
