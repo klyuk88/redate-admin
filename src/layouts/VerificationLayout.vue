@@ -15,7 +15,7 @@
 
   &__content {
     position: relative;
-    width: 92.7%;
+    width: 93%;
     min-height: 100%;
     padding: 50px;
     z-index: 1;

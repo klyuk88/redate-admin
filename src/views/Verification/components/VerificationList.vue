@@ -13,6 +13,7 @@ defineProps({
   <div class="verification-list">
     <VerificationListItem
       v-for="(item, idx) in list"
+      :id="idx"
       :key="idx"
       :item="item"
       class="verification-list__item"
