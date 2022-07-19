@@ -1,11 +1,13 @@
 <script setup>
 import { ref } from 'vue'
+
 defineProps({
   blocked: {
     type: Object,
     required: true,
   },
 })
+
 const femalePage = ref(false)
 </script>
 

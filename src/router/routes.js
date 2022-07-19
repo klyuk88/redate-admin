@@ -68,6 +68,20 @@ const routes = [
     },
   },
   {
+    path: '/user-chats',
+    name: 'ChatsPage',
+    components: {
+      default: () => import('@/views/ChatsPage'),
+    },
+  },
+  {
+    path: '/chat/:user',
+    name: 'SingleChat',
+    components: {
+      default: () => import('@/views/UsersChat'),
+    },
+  },
+  {
     path: '/metrics',
     name: 'Metrics',
     components: {

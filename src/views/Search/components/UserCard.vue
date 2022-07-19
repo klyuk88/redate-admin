@@ -100,9 +100,11 @@ const visibleBbtn = ref(false)
         </div>
       </div>
       <div class="buttons__block">
-        <div class="btn">
-          <img src="@/assets/search__logos/chat.svg" alt="" />
-        </div>
+        <router-link to="/chat/test">
+          <div class="btn">
+            <img src="@/assets/search__logos/chat.svg" alt="" />
+          </div>
+        </router-link>
         <div v-if="isBanned" class="btn unban" @click="showUnbanModal = true">
           Разблокировать
         </div>
@@ -114,7 +116,9 @@ const visibleBbtn = ref(false)
           <img src="@/assets/search__logos/ban__icon.svg" alt="" />
           <p>Заблокировать</p>
         </div>
-        <div class="btn chat">Перейти в диалоги</div>
+        <router-link class="link" to="/user-chats">
+          <div class="btn chat">Перейти в диалоги</div>
+        </router-link>
         <div class="money__input">
           <input type="text" placeholder="Сумма  ₽" maxlength="7" />
           <div class="btn">
@@ -153,6 +157,9 @@ const visibleBbtn = ref(false)
 </template>
 
 <style lang="scss" scoped>
+.link {
+  text-decoration: none;
+}
 .diamond__title {
   font-family: 'Palatino';
   font-style: normal;

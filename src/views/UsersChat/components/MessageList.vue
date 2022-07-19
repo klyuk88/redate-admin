@@ -1,7 +1,8 @@
 <script setup>
-import ChatListItem from './ChatListItem.vue'
+import MessageListItem from './MessageListItem.vue'
+
 defineProps({
-  chatinfolist: {
+  chatfulldata: {
     type: Array,
     required: true,
   },
@@ -9,17 +10,17 @@ defineProps({
 </script>
 
 <template>
-  <div class="chat__list">
-    <ChatListItem
-      v-for="(chatinfo, index) in chatinfolist"
+  <div class="message__list">
+    <MessageListItem
+      v-for="(chatdata, index) in chatfulldata"
       :key="index"
-      :chatinfo="chatinfo"
+      :chatdata="chatdata"
     />
   </div>
 </template>
 
 <style lang="scss" scoped>
-.chat__list {
+.message__list {
   width: 100%;
   height: calc(100vh - 135px);
 }
