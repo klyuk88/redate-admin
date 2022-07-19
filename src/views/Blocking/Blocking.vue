@@ -28,7 +28,6 @@ const count = ref(89)
 <style lang="scss" scoped>
 .blocking__header {
   margin-bottom: 20px;
-
   .title {
     width: 913px;
   }
