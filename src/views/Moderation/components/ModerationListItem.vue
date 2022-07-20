@@ -17,7 +17,7 @@ const props = defineProps({
 const reasons = reactive([
   {
     id: 1,
-    title: 'Создает второй аккаунт',
+    title: 'В описании контактные данные',
     active: false,
   },
   {
@@ -36,27 +36,24 @@ const reasons = reactive([
     active: false,
   },
   {
-    id: 5,
-    title: 'Нарушение правил',
-    active: false,
-  },
-  {
     id: 6,
     title: 'Загрузка контента 18+',
     active: false,
   },
 ])
 
-const slides = computed(() => {
-  const size = 8
-  const subArray = []
+// const slides = computed(() => {
+//   const size = 8
+//   const subArray = []
 
-  for (let i = 0; i < Math.ceil(props.item.photos.length / size); i++) {
-    subArray[i] = props.item.photos.slice(i * size, i * size + size)
-  }
+//   for (let i = 0; i < Math.ceil(props.item.photos.length / size); i++) {
+//     subArray[i] = props.item.photos.slice(i * size, i * size + size)
+//   }
 
-  return subArray
-})
+//   return subArray
+// })
+
+const slides = computed(() => props.item.photos)
 
 const clickHandler = (id) => {
   reasons.forEach((reason) => {
@@ -68,90 +65,95 @@ const clickHandler = (id) => {
 </script>
 
 <template>
-  <div class="verification-list-item">
-    <div class="verification-list-item__left">
-      <div class="verification-list-item__images">
+  <div class="moderation-list-item">
+    <div class="moderation-list-item__left">
+      <div class="moderation-list-item__images">
         <img
           :src="item.avatar"
           :alt="`Аватар пользователя ID${item.userId}`"
-          class="verification-list-item__image"
+          class="moderation-list-item__image"
         />
         <img
           :src="item.verificationPhoto"
           :alt="`Фото для верификации пользователя ID${item.userId}`"
-          class="verification-list-item__image"
+          class="moderation-list-item__image"
         />
       </div>
-      <div class="verification-list-item__info">
-        <div class="verification-list-item__header">
-          <div class="verification-list-item__user-id">ID{{ item.userId }}</div>
-          <div class="verification-list-item__form-type">
-            {{ item.formType }}
+      <div class="moderation-list-item__info">
+        <div class="moderation-list-item__header">
+          <router-link
+            class="moderation-list-item__user-id"
+            :to="`/search/${item.userId}`"
+          >
+            ID{{ item.userId }}
+          </router-link>
+          <div class="moderation-list-item__place">
+            {{ item.country }}, {{ item.city }}
+          </div>
+          <div class="moderation-list-item__age">{{ item.age }} лет</div>
+        </div>
+        <div class="moderation-list-item__slider">
+          <div class="moderation-list-item__slider-wrapper">
+            <div class="moderation-list-item__slider-title">Новые фото:</div>
+            <div class="moderation-list-item__slider-swiper">
+              <Swiper
+                :modules="[Navigation]"
+                :space-between="0"
+                slides-per-view="3"
+                :class="{ [`test${id}`]: true }"
+                :navigation="{
+                  prevEl:
+                    '.moderation-list-item__slider-wrapper .moderation-list-item__prev',
+                  nextEl:
+                    '.moderation-list-item__slider-wrapper .moderation-list-item__next',
+                }"
+              >
+                <SwiperSlide v-for="(slide, i) in slides" :key="i">
+                  <div class="moderation-list-item__slide-item">
+                    <img :src="slide" alt="slide" />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
           </div>
         </div>
-        <div class="verification-list-item__slider">
-          <div class="verification-list-item__slider-wrapper">
-            <Swiper
-              :modules="[Navigation]"
-              :space-between="6"
-              slides-per-view="auto"
-              :class="{ [`test${id}`]: true }"
-              :navigation="{
-                prevEl:
-                  '.verification-list-item__slider-wrapper .verification-list-item__prev',
-                nextEl:
-                  '.verification-list-item__slider-wrapper .verification-list-item__next',
-              }"
-            >
-              <SwiperSlide v-for="(slide, i) in slides" :key="i">
-                <img
-                  v-for="(img, j) in slide"
-                  :key="j"
-                  :src="img"
-                  alt="slide"
-                  class="verification-list-item__slide-item"
-                />
-              </SwiperSlide>
-            </Swiper>
-          </div>
-        </div>
-        <div class="verification-list-item__message">
+        <div class="moderation-list-item__message">
           <span>О себе:</span> {{ item.about }}
         </div>
       </div>
     </div>
-    <div class="verification-list-item__button">
-      <div class="verification-list-item__success"></div>
+    <div class="moderation-list-item__button">
+      <div class="moderation-list-item__success"></div>
     </div>
-    <div class="verification-list-item__right">
-      <div class="verification-list-item__title">Отклонить по причине:</div>
+    <div class="moderation-list-item__right">
+      <div class="moderation-list-item__title">Отклонить по причине:</div>
       <div
         v-for="(reason, idx) in reasons"
         :key="idx"
-        class="verification-list-item__reason"
+        class="moderation-list-item__reason"
         :class="{ active: reason.active }"
         @click="clickHandler(reason.id)"
       >
-        <div class="verification-list-item__reason-icon"></div>
+        <div class="moderation-list-item__reason-icon"></div>
         {{ reason.title }}
       </div>
-      <div class="verification-list-item__input">
+      <div class="moderation-list-item__input">
         <input type="text" placeholder="Опишите причину" />
-        <div class="verification-list-item__input-button"></div>
+        <div class="moderation-list-item__input-button"></div>
       </div>
     </div>
   </div>
 </template>
 
 <style lang="scss">
-.verification-list-item {
+.moderation-list-item {
   display: flex;
 
   &__left {
     display: flex;
     align-items: flex-start;
     width: calc(100% - 316px - 64px);
-    padding: 16px;
+    padding: 16px 47px 16px 16px;
     border-radius: 23px 0 0 23px;
     background: $dark-gray;
   }
@@ -164,7 +166,7 @@ const clickHandler = (id) => {
 
   &__image {
     width: 185px;
-    height: 299px;
+    height: 262px;
     object-fit: cover;
     margin-right: 8px;
     border-radius: 14px;
@@ -175,14 +177,13 @@ const clickHandler = (id) => {
   }
 
   &__info {
-    width: calc(100% - 378px - 32px);
-    margin-left: 32px;
+    width: calc(100% - 378px - 16px);
+    margin-left: 16px;
   }
 
   &__header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 8px 0;
   }
 
@@ -190,56 +191,97 @@ const clickHandler = (id) => {
     display: inline-block;
     color: $white;
     font-size: 1.6rem;
-    line-height: 2.456rem;
+    line-height: 2.4rem;
     font-weight: 600;
   }
 
-  &__form-type {
-    padding: 2px 10px;
-    border-radius: 16px;
-    background: $accent-3;
+  &__place {
+    position: relative;
+    margin-left: 29px;
+    color: rgba($white, 0.45);
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+    font-weight: 700;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -15px;
+      transform: translate(0, -50%);
+      width: 2px;
+      height: 14px;
+      background: rgba($white, 0.33);
+    }
+  }
+
+  &__age {
+    position: relative;
+    margin-left: 29px;
     color: $white;
     font-size: 1.5rem;
-    line-height: 2.303rem;
-    font-weight: 600;
+    line-height: 2.3rem;
+    font-weight: 700;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -15px;
+      transform: translate(0, -50%);
+      width: 2px;
+      height: 14px;
+      background: rgba($white, 0.33);
+    }
   }
 
   &__slider {
     margin-top: 8px;
-    padding: 0 0 8px 0;
+    padding: 8px 0;
     border: 1px solid rgba($white, 0.33);
     border-radius: 14px;
     overflow: hidden;
   }
 
+  &__slider-title {
+    width: 100px;
+    margin-right: 8px;
+    color: $white;
+    font-size: 1.5rem;
+    line-height: 2.303rem;
+    font-weight: 700;
+  }
+
   &__slider-wrapper {
+    display: flex;
+    align-items: center;
     position: relative;
-    width: 266px;
+    width: 290px;
     margin: 0 auto;
   }
 
-  &__slide-item {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
+  &__slider-swiper {
+    width: calc(100% - 108px);
   }
 
-  .swiper-slide {
-    display: flex;
-    flex-wrap: wrap;
+  &__slide-item {
+    width: 52px;
+    height: 52px;
+    margin-right: 8px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
 
     img {
-      margin-right: 8px;
-      margin-top: 8px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       border-radius: 8px;
-
-      &:nth-child(4n) {
-        margin-right: 0;
-      }
     }
   }
 
-  .verification-list-item__slider-wrapper .verification-list-item__prev {
+  .moderation-list-item__slider-wrapper .moderation-list-item__prev {
     position: absolute;
     top: calc(50% + 5px);
     left: -20px;
@@ -280,7 +322,7 @@ const clickHandler = (id) => {
     }
   }
 
-  .verification-list-item__slider-wrapper .verification-list-item__next {
+  .moderation-list-item__slider-wrapper .moderation-list-item__next {
     position: absolute;
     top: calc(50% + 5px);
     right: -20px;
@@ -311,6 +353,7 @@ const clickHandler = (id) => {
   }
 
   &__message {
+    height: 136px;
     padding: 8px 16px 11px 16px;
     margin-top: 8px;
     border: 1px solid rgba($black, 0.33);
@@ -377,7 +420,7 @@ const clickHandler = (id) => {
       border-color: transparent;
       background: rgba($accent-2, 0.5);
 
-      .verification-list-item__reason-icon {
+      .moderation-list-item__reason-icon {
         width: 16px;
         height: 12px;
         margin-right: 16px;
@@ -391,7 +434,7 @@ const clickHandler = (id) => {
       border-color: transparent;
       background: rgba($accent-2, 0.5);
 
-      .verification-list-item__reason-icon {
+      .moderation-list-item__reason-icon {
         width: 16px;
         height: 12px;
         margin-right: 16px;
