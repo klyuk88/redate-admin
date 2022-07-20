@@ -31,7 +31,6 @@ const store = [
 </template>
 
 <style lang="scss" scoped>
-
 li {
   list-style: none;
 }

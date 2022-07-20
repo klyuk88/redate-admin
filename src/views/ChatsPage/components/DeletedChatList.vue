@@ -7,14 +7,15 @@ defineProps({
     required: true,
   },
 })
-
 </script>
 
 <template>
   <div class="deleted__chats">
-    <DeletedChatListItem v-for="(chatinfo, index) in deletedChats" 
-    :key="index"
-    :chatinfo="chatinfo" />
+    <DeletedChatListItem
+      v-for="(chatinfo, index) in deletedChats"
+      :key="index"
+      :chatinfo="chatinfo"
+    />
   </div>
 </template>
 

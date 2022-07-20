@@ -23,15 +23,15 @@ const chatinfolist = computed(() => chatinfoStore.chatinfo)
 </template>
 
 <style lang="scss" scoped>
-  .support_chat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .chat__list {
-        margin-left: 60px;
-        .list {
-          margin-right: 84px;
-        }
+.support_chat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .chat__list {
+    margin-left: 60px;
+    .list {
+      margin-right: 84px;
     }
   }
+}
 </style>

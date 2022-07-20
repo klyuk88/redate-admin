@@ -137,6 +137,6 @@ export const useUsersChats = defineStore('usersChats', {
         name: 'Светлана',
         message: 'Пох',
       },
-    ]
+    ],
   }),
 })

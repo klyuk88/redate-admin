@@ -12,7 +12,11 @@ const isClicked = ref(false)
 </script>
 
 <template>
-  <div class="message__item" :class="{ checked : isClicked }" @click="isClicked = true">
+  <div
+    class="message__item"
+    :class="{ checked: isClicked }"
+    @click="isClicked = true"
+  >
     <div class="left__block">
       <div class="avatar">
         <img src="@/assets/chat/avatar.png" alt="" />
@@ -94,6 +98,4 @@ const isClicked = ref(false)
     }
   }
 }
-
-
 </style>

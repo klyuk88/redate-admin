@@ -43,10 +43,10 @@
     }
   }
   .vertical__line {
-      height: 16px;
-      width: 2px;
-      background: #ffffff;
-      margin: 0 12px;
+    height: 16px;
+    width: 2px;
+    background: #ffffff;
+    margin: 0 12px;
   }
   .horizontal__line {
     width: 847px;

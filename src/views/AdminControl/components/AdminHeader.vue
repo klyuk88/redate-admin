@@ -33,9 +33,9 @@
     height: 33px;
     border: 1px solid #3e74ff;
     border-radius: 11px;
-    cursor:pointer;
+    cursor: pointer;
     span {
-        margin-right: 4px;
+      margin-right: 4px;
     }
   }
 }

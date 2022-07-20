@@ -23,8 +23,7 @@ export const useSupportChat = defineStore('chatinfo', {
       },
       {
         name: 'Камила',
-        message:
-          'Помогите. ',
+        message: 'Помогите. ',
         date: '12:55',
         count: 2,
       },

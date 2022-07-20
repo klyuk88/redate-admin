@@ -15,13 +15,13 @@ const deletedChatsList = computed(() => usersChatsStore.deletedChats)
   <ChatHeader title="Диалоги пользователя" />
   <div class="da">
     <Scrollbar>
-      <UsersChatList :usersChats="usersChatsList" />
+      <UsersChatList :users-chats="usersChatsList" />
     </Scrollbar>
   </div>
   <div class="da">
     <ChatHeader title="Удаленные диалоги пользователя " class="header" />
     <Scrollbar>
-      <DeletedChatList :deletedChats="deletedChatsList" />
+      <DeletedChatList :deleted-chats="deletedChatsList" />
     </Scrollbar>
   </div>
 </template>

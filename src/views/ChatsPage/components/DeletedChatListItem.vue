@@ -37,8 +37,8 @@ defineProps({
 
 <style lang="scss" scoped>
 .link {
-    text-decoration: none;
-    display: flex;
+  text-decoration: none;
+  display: flex;
 }
 .chat__item {
   display: flex;

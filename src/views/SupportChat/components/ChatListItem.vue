@@ -24,7 +24,7 @@ defineProps({
         </div>
       </div>
       <div class="chat__info">
-        <div class="date" >{{ chatinfo.date }}</div>
+        <div class="date">{{ chatinfo.date }}</div>
         <div v-if="chatinfo.count >= 1" class="message__counter">
           {{ chatinfo.count }}
         </div>
@@ -103,7 +103,7 @@ defineProps({
           border-radius: 20px;
           margin-right: 8px;
           img {
-              width: 100%;
+            width: 100%;
           }
         }
       }
