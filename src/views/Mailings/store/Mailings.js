@@ -334,14 +334,6 @@ export const useMailingsStore = defineStore('mailings', {
 
   actions: {
     setCurrentTab(tab) {
-      const tabs = [tab]
-
-      const filteredTabs = this.tabs.filter((item) => item.id !== tab.id)
-
-      const sortedTabs = filteredTabs.sort((a, b) => a.id - b.id)
-
-      this.tabs = [...tabs, ...sortedTabs]
-
       this.currentTab = tab
     },
   },

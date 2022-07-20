@@ -61,37 +61,16 @@ const component = computed(() => {
     background: $background;
   }
 
-  &__item--on-moderation.active {
-    width: 57.4%;
+  &__item--on-moderation {
+    width: 49%;
   }
 
-  &__item--on-moderation.active ~ .mailings-tabs__item--active,
-  .mailings-tabs__item--rejected {
-    width: 21.3%;
+  &__item--active {
+    width: 25.5%;
   }
 
-  &__item--active.active {
-    width: 40.6%;
-  }
-
-  &__item--active.active ~ .mailings-tabs__item--on-moderation {
-    width: 38%;
-  }
-
-  &__item--active.active ~ .mailings-tabs__item--rejected {
-    width: 21.4%;
-  }
-
-  &__item--rejected.active {
-    width: 42.3%;
-  }
-
-  &__item--rejected.active ~ .mailings-tabs__item--on-moderation {
-    width: 36.2%;
-  }
-
-  &__item--rejected.active ~ .mailings-tabs__item--active {
-    width: 21.5%;
+  &__item--rejected {
+    width: 25.5%;
   }
 
   &__component {

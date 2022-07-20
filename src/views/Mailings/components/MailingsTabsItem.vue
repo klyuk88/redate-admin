@@ -22,7 +22,11 @@ const clickHandler = () => {
 <template>
   <div
     class="mailings-tabs-item"
-    :class="{ active, 'mailings-tabs-item--without-counter': !tab.count }"
+    :class="{
+      active,
+      'mailings-tabs-item--without-counter': !tab.count,
+      [`mailings-tabs-item--${tab.mod}`]: true,
+    }"
     @click="clickHandler()"
   >
     <div class="mailings-tabs-item__title">{{ tab.title }}</div>
@@ -37,7 +41,7 @@ const clickHandler = () => {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 22px 12px 22px;
+  height: 70px;
   border: 1px solid rgba($white, 0.066);
   border-radius: 16px 16px 0 0;
   cursor: pointer;
@@ -48,10 +52,10 @@ const clickHandler = () => {
 
   &__title {
     height: 37px;
-    color: $gray;
+    color: rgba($white, 0.5);
     font-size: 2.4rem;
     line-height: 3.7rem;
-    font-weight: 600;
+    font-weight: 400;
   }
 
   &__counter {
@@ -69,28 +73,32 @@ const clickHandler = () => {
   }
 
   &.active {
-    padding: 28px 37px 0 48px;
     border-bottom: none;
     background: $mailing-tab-background;
 
     .mailings-tabs-item {
       &__title {
-        height: 53px;
         color: $white;
-        font-size: 3.4rem;
-        line-height: 5.3rem;
         font-weight: 600;
       }
 
       &__counter {
-        width: 104px;
-        height: 53px;
-        border-color: $accent-3;
+        border-color: $white;
         color: $white;
-        font-size: 2.4rem;
-        line-height: 4.55rem;
       }
     }
+  }
+
+  &--on-moderation {
+    padding: 0 25px 0 50px;
+  }
+
+  &--active {
+    padding: 0 36px;
+  }
+
+  &--rejected {
+    padding: 0 36px;
   }
 }
 </style>

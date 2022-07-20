@@ -119,10 +119,10 @@ defineProps({
     &::after {
       content: '';
       position: absolute;
-      top: 0;
-      right: -7px;
-      width: 5px;
-      height: 5px;
+      top: 6px;
+      right: -15px;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
       background: $offline;
     }

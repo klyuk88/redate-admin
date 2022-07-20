@@ -38,7 +38,7 @@ defineProps({
       </div>
       <div class="mailings-active-list-item__date">({{ mailing.date }})</div>
     </div>
-    <div class="mailings-active-list-item__button">Остановить</div>
+    <div class="mailings-active-list-item__button"></div>
   </div>
 </template>
 
@@ -47,7 +47,7 @@ defineProps({
   display: flex;
 
   &__left {
-    width: calc(100% - 397px - 142px);
+    width: calc(100% - 492px - 43px);
     padding: 24px;
     border-radius: 10px 0 0 10px;
     border: 1px solid $accent-3;
@@ -96,16 +96,28 @@ defineProps({
   }
 
   &__button {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 142px;
+    width: 43px;
     background: $button-background-cancel;
     cursor: pointer;
     color: $white;
     font-size: 1.5rem;
     line-height: 2.303rem;
     font-weight: 600;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 17px;
+      height: 17px;
+      background: $white;
+    }
   }
 
   &__center {
@@ -113,7 +125,7 @@ defineProps({
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 397px;
+    width: 492px;
     padding: 7px 26px;
     border: 2px solid $gray-1;
   }
@@ -133,16 +145,16 @@ defineProps({
     margin-top: 10px;
     color: $white;
     font-size: 1.5rem;
-    line-height: 2.2rem;
+    line-height: 2.303rem;
     font-weight: 600;
 
     &::after {
       content: '';
       position: absolute;
-      top: 0;
-      right: -7px;
-      width: 5px;
-      height: 5px;
+      top: 7px;
+      right: -16px;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
       background: $offline;
     }
