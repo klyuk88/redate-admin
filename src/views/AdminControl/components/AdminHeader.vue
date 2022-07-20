@@ -1,9 +1,15 @@
-<!-- <script setup></script> -->
+<script setup>
+import NewAdminPopup from './NewAdminPopup.vue'
+import { ref } from 'vue'
+
+const newAdmin = ref(false)
+</script>
 
 <template>
+<NewAdminPopup v-if="newAdmin" @close-new-modal="newAdmin = false"/>
   <div class="moderation__header">
     <h1>Контроль админов</h1>
-    <div class="btn__create">
+    <div class="btn__create" @click="newAdmin = true">
       <span>+</span>
       <p>Создать новый аккаунт</p>
     </div>

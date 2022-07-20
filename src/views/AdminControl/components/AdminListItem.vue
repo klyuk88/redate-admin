@@ -1,21 +1,60 @@
-<!-- <script setup></script> -->
+<script setup>
+import RoleSelector from './RoleSelector.vue'
+import ChooseRolePopup from './ChooseRolePopup.vue'
+import { ref, computed } from 'vue'
+import AdminChange from './AdminChange.vue'
+import AdminProgressList from './AdminProgressList.vue'
+import { useAdminStore } from '../store/AdminsStore'
+
+const progressStore = useAdminStore()
+const progressFullData = computed(() => progressStore.progressData)
+const chooseRole = ref(false)
+const deleteAdmin = ref(false)
+const adminChange = ref(false)
+defineProps({
+  adminData: {
+    type: Object,
+    required: true,
+  },
+})
+</script>
 
 <template>
+  <ChooseRolePopup
+    v-if="chooseRole"
+    text="Вы уверены что хотите сменить роль с администратора на модератора?"
+    :adminName="adminData.name"
+    btnText="Сменить роль"
+    @close-role-modal="chooseRole = false"
+  />
+  <ChooseRolePopup
+    v-if="deleteAdmin"
+    text="Вы уверены что хотите удалить администратора?"
+    :adminName="adminData.name"
+    btnText="Удалить"
+    @close-role-modal="deleteAdmin = false"
+  />
+  <AdminChange
+    v-if="adminChange"
+    :adminName="adminData.name"
+    @close-change-modal="adminChange = false"
+  />
   <div class="admin__item">
     <div class="title">
-      <h1>katya</h1>
+      <h1>{{ adminData.name }}</h1>
       <div class="dot"></div>
     </div>
     <div class="role">
-      <div class="selector"></div>
+      <RoleSelector />
     </div>
     <div class="btn__block">
-      <div class="btn">
+      <div class="btn" @click="adminChange = true">
         <img src="@/assets/admin/key.svg" alt="" />
       </div>
-      <div class="btn">x</div>
+      <div class="btn" @click="deleteAdmin = true">x</div>
     </div>
   </div>
+  <AdminProgressList :progress-full-data="progressFullData" />
 </template>
 
 <style lang="scss" scoped>
@@ -29,6 +68,7 @@
   border-radius: 1px;
   .title {
     display: flex;
+    width: 150px;
     h1 {
       font-weight: 600;
       font-size: 15px;
