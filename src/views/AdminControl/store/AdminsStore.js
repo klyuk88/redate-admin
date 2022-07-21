@@ -5,30 +5,39 @@ export const useAdminStore = defineStore('adminstore', {
     adminData: [
       {
         name: 'Катя',
+        work: 79
       },
       {
         name: 'Вася',
+        work: 13
       },
       {
         name: 'Оля',
+        work: 7
       },
       {
         name: 'Дуся',
+        work: 791
       },
       {
         name: 'Муся',
+        work: 49
       },
       {
         name: 'Ганбатый',
+        work: 1
       },
       {
         name: 'Каля',
+        work: 8
       },
       {
         name: 'Валя',
+        work: 12
       },
       {
         name: 'Мура',
+        work: 0
       },
     ],
     progressData: [

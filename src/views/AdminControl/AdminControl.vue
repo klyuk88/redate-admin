@@ -12,7 +12,6 @@ const adminsData = computed(()=> adminStore.adminData)
 
 <template>
   <div>
-
     <AdminHeader />
     <AdminNav />
     <AdminList :admins-data="adminsData"/>

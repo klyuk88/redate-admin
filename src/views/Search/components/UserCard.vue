@@ -1,11 +1,15 @@
 <script setup>
 import ReportList from './ReportList.vue'
 import NoteList from './NoteList.vue'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import PopupBan from './PopupBan.vue'
 import PopupUnban from './PopupUnban.vue'
 import PopupDiamond from './PopupDiamond.vue'
+import { useUserCardStore } from '../store/UserCard'
 
+const noteStore = useUserCardStore()
+const noteFullData = computed(()=> noteStore.noteData)
+const reportsFullData = computed(() => noteStore.reportsData)
 const isBanned = ref(true)
 const isDiamond = ref(true)
 const femalePage = ref(false)
@@ -133,14 +137,14 @@ const visibleBbtn = ref(false)
         <h1>Архив жалоб</h1>
         <div class="horizontal__line"></div>
       </div>
-      <ReportList />
+      <ReportList :reports-full-data="reportsFullData"/>
     </div>
     <div class="right__side">
       <div class="note__title">
         <h1>Комментарии модераторов</h1>
       </div>
       <div class="note__list">
-        <NoteList />
+        <NoteList :note-full-data="noteFullData" />
       </div>
       <div>
         <textarea
@@ -305,6 +309,8 @@ const visibleBbtn = ref(false)
   display: flex;
   justify-content: space-between;
   width: 1226px;
+    // width: 100%;
+  height: calc(100vh - 175px);
   .left__side {
     width: 684px;
     margin: 50px 0 0 50px;
@@ -483,7 +489,7 @@ const visibleBbtn = ref(false)
   }
   .right__side {
     width: 440px;
-    height: 100vh;
+    // height: 100vh;
     background: #27282c;
     border: 1px solid rgba(255, 255, 255, 0.33);
     border-top: none;

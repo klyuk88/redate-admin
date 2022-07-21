@@ -1,13 +1,14 @@
 <script setup>
 import StatsBlock from './components/StatsBlock.vue'
 import UsersBlock from './components/UsersBlock.vue'
+import Calendar from '../../components/Calendar/Calendar.vue'
 </script>
 
 <template>
   <div class="background__metrics">
     <div class="header__metrics">
       <h1>Мониторинг дохода</h1>
-      <div class="calendar"></div>
+      <Calendar />
     </div>
     <div class="income__metrics">
       <div class="income__header">
@@ -94,6 +95,8 @@ p {
   // flex-direction: column;
   .header__metrics {
     display: flex;
+    justify-content: space-between;
+    width: 930px;
     h1 {
       font-weight: 600;
       font-size: 34px;

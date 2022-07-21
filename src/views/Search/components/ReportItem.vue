@@ -1,20 +1,8 @@
 <script setup>
 defineProps({
-  reason: {
+  reportsData: {
     type: String,
-    default: null,
-  },
-  id: {
-    type: Number,
-    default: null,
-  },
-  date: {
-    type: String,
-    default: null,
-  },
-  text: {
-    type: String,
-    default: null,
+    required: null,
   },
 })
 </script>
@@ -24,16 +12,16 @@ defineProps({
     <div class="report__header">
       <div class="reason">
         <p>Причина:</p>
-        <span>{{ reason }}</span>
+        <span>{{ reportsData.reason }}</span>
       </div>
       <div class="report__data">
         <p>Жалоба от:</p>
-        <span>{{ id }}</span>
-        <p>{{ date }}</p>
+        <span>{{ reportsData.id }}</span>
+        <p>{{ reportsData.date }}</p>
       </div>
     </div>
     <div class="horizontal__line"></div>
-    <p class="text">"{{ text }}"</p>
+    <p class="text">"{{ reportsData.text }}"</p>
   </div>
 </template>
 

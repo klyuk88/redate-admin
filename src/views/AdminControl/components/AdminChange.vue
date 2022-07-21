@@ -13,7 +13,7 @@ defineProps({
   <div class="background__change" @click.self="emit('closeChangeModal')">
     <div class="content">
       <div class="container__change">
-        <p>Ведитеновый логин и пароль для юзера</p>
+        <p>Введите новый логин и пароль для юзера</p>
         <div class="name">
           <div class="dot"></div>
           <h1>{{ adminName }}</h1>
@@ -37,7 +37,7 @@ defineProps({
 .input {
   width: 328px;
   height: 60px;
- background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5);
   outline: none;
   border: 1px solid #ffffff;
   border-radius: 11px;
