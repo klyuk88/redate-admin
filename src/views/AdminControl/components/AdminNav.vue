@@ -1,10 +1,17 @@
-<!-- <script setup></script> -->
+<script setup>
+import Calendar from '../../../components/Calendar/Calendar.vue'
+</script>
 
 <template>
   <div class="admin__nav">
     <p>Имя админа</p>
     <p>Роль</p>
-    <div class="calendar">calendar</div>
+    <Calendar />
+  </div>
+
+  <div>
+    <div class="leftside"></div>
+    <div class="leftside"></div>
   </div>
 </template>
 

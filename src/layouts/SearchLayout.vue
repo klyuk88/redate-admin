@@ -17,7 +17,7 @@
     position: relative;
     width: 89.4%;
     min-height: 100%;
-    overflow-y: scroll;
+    // overflow-y: scroll;
     z-index: 1;
 
     &:after {

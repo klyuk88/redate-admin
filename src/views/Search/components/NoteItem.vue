@@ -1,16 +1,8 @@
 <script setup>
 defineProps({
-  name: {
-    type: String,
-    default: null,
-  },
-  date: {
-    type: String,
-    default: null,
-  },
-  text: {
-    type: String,
-    default: null,
+  noteData: {
+    type: Object,
+    required: true,
   },
 })
 </script>
@@ -19,12 +11,12 @@ defineProps({
   <div class="note__item">
     <div class="note__header">
       <div class="name">
-        <p>{{ name }}</p>
+        <p>{{ noteData.name }}</p>
         <div class="online__status"></div>
       </div>
-      <p>{{ date }}</p>
+      <p>{{ noteData.date }}</p>
     </div>
-    <p class="text">{{ text }}</p>
+    <p class="text">{{ noteData.text }}</p>
   </div>
 </template>
 

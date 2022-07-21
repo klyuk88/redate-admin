@@ -11,6 +11,7 @@ const progressFullData = computed(() => progressStore.progressData)
 const chooseRole = ref(false)
 const deleteAdmin = ref(false)
 const adminChange = ref(false)
+const isCliked = ref(false)
 defineProps({
   adminData: {
     type: Object,
@@ -23,29 +24,32 @@ defineProps({
   <ChooseRolePopup
     v-if="chooseRole"
     text="Вы уверены что хотите сменить роль с администратора на модератора?"
-    :adminName="adminData.name"
-    btnText="Сменить роль"
+    :admin-name="adminData.name"
+    btn-text="Сменить роль"
     @close-role-modal="chooseRole = false"
   />
   <ChooseRolePopup
     v-if="deleteAdmin"
     text="Вы уверены что хотите удалить администратора?"
-    :adminName="adminData.name"
-    btnText="Удалить"
+    :admin-name="adminData.name"
+    btn-text="Удалить"
     @close-role-modal="deleteAdmin = false"
   />
   <AdminChange
     v-if="adminChange"
-    :adminName="adminData.name"
+    :admin-name="adminData.name"
     @close-change-modal="adminChange = false"
   />
   <div class="admin__item">
-    <div class="title">
+    <div class="title"  @click="isCliked = !isCliked">
       <h1>{{ adminData.name }}</h1>
       <div class="dot"></div>
     </div>
     <div class="role">
       <RoleSelector />
+    </div>
+    <div class="work__counter" :class="{ show: isCliked }">
+      {{ adminData.work }} часов
     </div>
     <div class="btn__block">
       <div class="btn" @click="adminChange = true">
@@ -54,10 +58,28 @@ defineProps({
       <div class="btn" @click="deleteAdmin = true">x</div>
     </div>
   </div>
-  <AdminProgressList :progress-full-data="progressFullData" />
+  <div class="list__content" :class="{ show: isCliked }">
+    <AdminProgressList :progress-full-data="progressFullData" />
+  </div>
 </template>
 
 <style lang="scss" scoped>
+.list__content {
+  display: none;
+  &.show {
+    display: block;
+  }
+}
+.work__counter {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #ffffff;
+  display: none;
+  &.show {
+    display: block;
+  }
+}
 .admin__item {
   display: flex;
   justify-content: space-between;
@@ -69,6 +91,7 @@ defineProps({
   .title {
     display: flex;
     width: 150px;
+    cursor: pointer;
     h1 {
       font-weight: 600;
       font-size: 15px;
