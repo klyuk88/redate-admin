@@ -1,6 +1,6 @@
 <script setup>
-// import UserCard from './components/UserCard.vue'
-// import Scrollbar from '../../components/Scrollbar/Scrollbar.vue'
+import UserCard from './components/UserCard.vue'
+import Scrollbar from '../../components/Scrollbar/Scrollbar.vue'
 </script>
 
 <template>
@@ -13,9 +13,9 @@
       </div>
     </div>
   </div>
-  <!-- <Scrollbar>
+  <Scrollbar>
     <UserCard />
-  </Scrollbar> -->
+  </Scrollbar>
 </template>
 
 <style lang="scss" scoped>

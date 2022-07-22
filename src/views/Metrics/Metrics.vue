@@ -95,15 +95,15 @@ p {
   // flex-direction: column;
   .header__metrics {
     display: flex;
-    justify-content: space-between;
-    width: 930px;
+    // justify-content: space-between;
+    width: 1290px;
+    position: relative;
+    
     h1 {
       font-weight: 600;
       font-size: 34px;
       line-height: 43px;
       margin: 0 0 17px 0;
-    }
-    .calendar {
     }
   }
   .income__metrics {
