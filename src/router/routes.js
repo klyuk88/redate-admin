@@ -58,6 +58,16 @@ const routes = [
     },
   },
   {
+    path: '/search/:id',
+    name: 'SearchUser',
+    components: {
+      default: () => import('@/views/Search/SearchUser.vue'),
+    },
+    meta: {
+      layout: 'search',
+    },
+  },
+  {
     path: '/search',
     name: 'Search',
     components: {
