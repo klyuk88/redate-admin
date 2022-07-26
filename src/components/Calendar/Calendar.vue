@@ -1,5 +1,11 @@
 <script setup>
 import { ref } from 'vue'
+import Datepicker from '@vuepic/vue-datepicker'
+// import '@vuepic/vue-datepicker/dist/main.css'
+import '@vuepic/vue-datepicker/src/VueDatePicker/style/main.scss'
+
+
+const date = ref()
 
 const isClicked = ref(false)
 </script>
@@ -12,11 +18,38 @@ const isClicked = ref(false)
     </div>
   </div>
   <div class="calendar__data" :class="{ open: isClicked }">
-
+    <Datepicker
+      dark="true"
+      v-model="date"
+      inline="true"
+      multiDates="true"
+      menuClassName="dp-custom-menu"
+      calendarClassName="dp-custom-calendar"
+      hideInputIcon="true"
+      monthNameFormat="long"
+      locale="ru-RU"
+      autoApply
+      :close-on-auto-apply="false"
+      :enable-time-picker="false"
+    ></Datepicker>
   </div>
 </template>
 
 <style lang="scss" scoped>
+.dp-custom-menu {
+  box-shadow: 0 0 6px #ffffff;
+}
+.dp-custom-calendar {
+  .dp__calendar_item {
+    border: 1px solid var(--dp-border-color-hover);
+  }
+}
+
+
+
+
+.calendar__data {
+}
 .calendar {
   position: relative;
   z-index: 1;
@@ -78,7 +111,12 @@ const isClicked = ref(false)
   border-radius: 11px 24px 11px 11px;
   display: none;
   &.open {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
+
+
+
 </style>
